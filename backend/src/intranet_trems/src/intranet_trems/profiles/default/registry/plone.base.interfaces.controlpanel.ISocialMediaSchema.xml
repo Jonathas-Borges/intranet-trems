@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<registry>
+  <records interface="plone.base.interfaces.controlpanel.ISocialMediaSchema" prefix="plone">
+    <value key="facebook_app_id"></value>
+    <value key="facebook_username"></value>
+    <value key="share_social_data">True</value>
+    <value key="twitter_username">Jota</value>
+  </records>
+</registry>
