@@ -4,6 +4,7 @@
            prefix="plone"
            purge="false"
   >
+    <value key="enable_sitemap">true</value>
     <value key="site_title">Nova Intranet TRE-MS</value>
   </records>
 </registry>
