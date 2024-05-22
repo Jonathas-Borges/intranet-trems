@@ -4,5 +4,8 @@
     <permission acquire="False"
                 name="intranet_trems: Add Pessoa"
     />
+    <permission acquire="False"
+                name="intranet_trems: Add Area"
+    />
   </permissions>
 </rolemap>

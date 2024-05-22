@@ -5,16 +5,20 @@
     >
 
   <configure zcml:condition="installed AccessControl.security">
-    <!-- -*- extra stuff goes here -*- -->
-
-  </configure>
-
-  <configure zcml:condition="installed AccessControl.security">
     <permission
         id="intranet_trems.pessoa.add"
         title="intranet_trems: Add Pessoa"
         />
 
   </configure>
+
+  <configure zcml:condition="installed AccessControl.security">
+    <permission
+        id="intranet_trems.area.add"
+        title="intranet_trems: Add Area"
+        />
+
+  </configure>
+
 
 </configure>
