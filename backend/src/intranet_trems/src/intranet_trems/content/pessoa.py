@@ -1,4 +1,5 @@
 from intranet_trems import _
+from intranet_trems import validadores
 from plone.app.vocabularies.catalog import StaticCatalogVocabulary
 from plone.dexterity.content import Container
 from plone.schema.email import Email
@@ -8,18 +9,6 @@ from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
 from zope import schema
 from zope.interface import implementer
-
-import re
-
-
-def is_valid_email(value: str) -> bool:
-    """Validar se o email é @tre-ms.jus.br."""
-    return value.endswith("@tre-ms.jus.br") if value else True
-
-
-def is_valid_extension(value: str) -> bool:
-    """Validar se o o ramal tem 4 dígitos numéricos."""
-    return re.match(r"^\d{4}$", value) if value else True
 
 
 class IPessoa(Schema):
@@ -57,12 +46,12 @@ class IPessoa(Schema):
     email = Email(
         title=_("Email"),
         required=True,
-        constraint=is_valid_email,
+        constraint=validadores.is_valid_email,
     )
     ramal = schema.TextLine(
         title=("Ramal"),
         required=True,
-        constraint=is_valid_extension,
+        constraint=validadores.is_valid_extension,
     )
 
 
