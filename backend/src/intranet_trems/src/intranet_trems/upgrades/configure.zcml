@@ -81,6 +81,16 @@
         title="Atualiza o permissionamento da pasta de estrutura"
         handler=".v20240522002.alterar_permissionamento_estrutura"
         />
-  </genericsetup:upgradeSteps>
-
+    </genericsetup:upgradeSteps>
+    
+    <genericsetup:upgradeSteps
+        profile="intranet_trems:default"
+        source="20240522002"
+        destination="20240522003"
+        >
+      <genericsetup:upgradeDepends
+          title="Aplicar o behavior intranet_trems.contact_info"
+          import_steps="typeinfo"
+          />
+    </genericsetup:upgradeSteps>
 </configure>

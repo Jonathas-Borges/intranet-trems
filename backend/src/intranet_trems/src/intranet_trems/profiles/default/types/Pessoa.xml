@@ -30,9 +30,10 @@
   <property name="behaviors"
             purge="false"
   >
+    <element value="intranet_trems.contact_info" />
     <element value="plone.namefromtitle" />
-    <element value="plone.shortname" />
     <element value="plone.leadimage" />
+    <element value="plone.shortname" />
     <element value="plone.excludefromnavigation" />
     <element value="plone.versioning" />
   </property>
