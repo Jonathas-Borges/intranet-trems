@@ -2,6 +2,9 @@ from intranet_trems.content.area import Area
 from plone import api
 from plone.dexterity.fti import DexterityFTI
 from zope.component import createObject
+from zope.event import notify
+from zope.lifecycleevent import ObjectModifiedEvent
+
 
 import pytest
 
@@ -137,3 +140,22 @@ class TestArea:
                 ramal="2022",
             )
         assert area.exclude_from_nav is True
+
+    def test_subscriber_modified(self, portal):
+            container = portal["estrutura"]
+            with api.env.adopt_roles(["Manager"]):
+                area = api.content.create(
+                    container=container,
+                    type=CONTENT_TYPE,
+                    title="Comunicação",
+                    description="",
+                    email="secom@tre-ms.jus.br",
+                    ramal="2022",
+                )
+            assert area.exclude_from_nav is True
+            # Altera a descricao
+            area.description = "Nossa área"
+            # Dispara o evento de modificacao
+            notify(ObjectModifiedEvent(area))
+            # Agora o objeto aparece na navegação
+            assert area.exclude_from_nav is False
