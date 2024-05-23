@@ -1,0 +1,49 @@
+body.contenttype-area {
+    #page-edit,
+    .ui.container.area-view {
+      max-width: var(--default-container-width) !important;
+      margin-right: auto;
+      margin-left: auto;
+      .ui.list.subareas {
+        display: flex;
+        max-width: var(--default-container-width);
+        flex-wrap: wrap;
+        margin-right: auto;
+        margin-left: auto;
+        @media only screen and (min-width: $tablet-breakpoint) {
+          .item {
+            width: 50% !important;
+          }
+        }
+        @media only screen and (max-width: $tablet-breakpoint) {
+          .item {
+            width: 50% !important;
+          }
+        }
+        @media only screen and (max-width: $largest-mobile-screen) {
+          .item {
+            width: 100% !important;
+          }
+        }
+        .item {
+          display: flex;
+          align-items: center;
+          padding: 30px 10px;
+          border-radius: 10px;
+          border-bottom: unset;
+          margin-bottom: 5px;
+          background-color: #e2e2e2;
+          > .icon {
+            display: inline-block;
+            width: 10% !important;
+            text-align: center;
+          }
+          > .content {
+            display: inline-block;
+            width: 90% !important;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
