@@ -159,3 +159,16 @@ class TestArea:
             notify(ObjectModifiedEvent(area))
             # Agora o objeto aparece na navegação
             assert area.exclude_from_nav is False
+    
+    def test_subscriber_added_creates_group(self, portal, payload):
+        from Products.PlonePAS.tools.groupdata import GroupData
+
+        container = portal["estrutura"]
+        with api.env.adopt_roles(["Manager"]):
+            area = api.content.create(container=container, **payload)
+        area_uuid = api.content.get_uuid(area)
+        group_name = f"{area_uuid}_editors"
+        group = api.group.get(groupname=group_name)
+        assert isinstance(group, GroupData)
+        roles = api.group.get_roles(group=group, obj=area)
+        assert "Editor" in roles
