@@ -94,7 +94,7 @@
         />
   </genericsetup:upgradeSteps>
 
-      <genericsetup:upgradeSteps
+  <genericsetup:upgradeSteps
       profile="intranet_trems:default"
       source="20240522003"
       destination="20240523001"
@@ -106,6 +106,17 @@
     <upgradeStep
         title="Reindexa o tipo pessoa"
         handler=".v20240523001.reindexa_pessoa"
+        />
+  </genericsetup:upgradeSteps>
+
+  <genericsetup:upgradeSteps
+      profile="intranet_trems:default"
+      source="20240523001"
+      destination="20240523002"
+      >
+    <genericsetup:upgradeDepends
+        title="Adiciona filtro por Área"
+        import_steps="plone.app.registry"
         />
   </genericsetup:upgradeSteps>
 
