@@ -293,5 +293,5 @@
     "react-refresh": "0.14.0"
   },
   "packageManager": "yarn@3.2.3",
-  "theme": "volto-intranet-trems"
+  "theme": "@kitconcept/volto-light-theme"
 }
