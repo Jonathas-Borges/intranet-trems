@@ -1,5 +1,4 @@
-import AreaView from './components/View/AreaView'
-
+import AreaView from './components/View/AreaView';
 
 const applyConfig = (config) => {
   config.settings = {

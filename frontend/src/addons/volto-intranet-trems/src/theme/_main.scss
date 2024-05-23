@@ -2,8 +2,8 @@
 // it is injected
 
 :root {
-    --narrow-container-width: 600px;
-    --default-container-width: 1100px;
-  }
+  --narrow-container-width: 600px;
+  --default-container-width: 1100px;
+}
 
-  @import 'components/view/area_view';
+@import 'components/view/area_view';
