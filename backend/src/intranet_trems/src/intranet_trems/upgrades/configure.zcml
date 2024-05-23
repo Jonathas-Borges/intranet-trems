@@ -93,4 +93,20 @@
         import_steps="typeinfo"
         />
   </genericsetup:upgradeSteps>
+
+      <genericsetup:upgradeSteps
+      profile="intranet_trems:default"
+      source="20240522003"
+      destination="20240523001"
+      >
+    <genericsetup:upgradeDepends
+        title="Adiciona o indice de area"
+        import_steps="catalog"
+        />
+    <upgradeStep
+        title="Reindexa o tipo pessoa"
+        handler=".v20240523001.reindexa_pessoa"
+        />
+  </genericsetup:upgradeSteps>
+
 </configure>
