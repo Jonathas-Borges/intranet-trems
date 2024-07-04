@@ -1,0 +1,6 @@
+graft src/intranet_trems
+graft docs
+include *.rst
+include *.md
+include *.cfg
+global-exclude *.pyc

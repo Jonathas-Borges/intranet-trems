@@ -1,0 +1,29 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+
+  <genericsetup:upgradeSteps
+      profile="intranet_trems:default"
+      source="20240702001"
+      destination="20240704002"
+      >
+    <genericsetup:upgradeDepends
+        title="Altera timezone para America/Campo_Grande"
+        import_steps="plone.app.registry"
+        />
+  </genericsetup:upgradeSteps>
+
+
+  <genericsetup:upgradeSteps
+      profile="intranet_trems:default"
+      source="20240704002"
+      destination="20240704003"
+      >
+    <genericsetup:upgradeDepends
+        title="Cria tipos de conteúdo Área e Pessoa"
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
+
+</configure>

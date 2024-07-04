@@ -1,0 +1,19 @@
+{
+  "portal": [
+    {
+      "email": "jonathasborges12@gmail.com",
+      "properties": {
+        "fullname": "Intranet TRE-MS",
+        "location": "World"
+      },
+      "groups": [
+      ],
+      "roles": [
+        "Member"
+      ],
+      "username": "intranet-trems"
+    }
+  ],
+    "team": [
+  ]
+}
