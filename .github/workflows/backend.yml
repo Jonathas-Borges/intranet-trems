@@ -142,6 +142,8 @@ jobs:
         with:
           driver: docker
           install: true
+          contents: read
+          packages: write
 
       - name: Login to Container Registry
         uses: docker/login-action@v3
