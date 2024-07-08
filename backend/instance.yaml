@@ -4,7 +4,3 @@ default_context:
     zcml_package_includes: 'intranet_trems'
 
     db_storage: direct
-
-permissions:
-      contents: read
-      packages: write
