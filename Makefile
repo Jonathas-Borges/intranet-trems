@@ -123,28 +123,28 @@ build-images:  ## Build docker images
 .PHONY: stack-start
 stack-start:  ## Local Stack: Start Services
 	@echo "Start local Docker stack"
-	@docker compose -f docker-compose.yml up -d --build
+	@docker-compose -f docker-compose.yml up -d --build
 	@echo "Now visit: http://intranet-trems.localhost"
 
 .PHONY: start-stack
 stack-create-site:  ## Local Stack: Create a new site
 	@echo "Create a new site in the local Docker stack"
-	@docker compose -f docker-compose.yml exec backend ./docker-entrypoint.sh create-site
+	@docker-compose -f docker-compose.yml exec backend ./docker-entrypoint.sh create-site
 
 .PHONY: start-ps
 stack-status:  ## Local Stack: Check Status
 	@echo "Check the status of the local Docker stack"
-	@docker compose -f docker-compose.yml ps
+	@docker-compose -f docker-compose.yml ps
 
 .PHONY: stack-stop
 stack-stop:  ##  Local Stack: Stop Services
 	@echo "Stop local Docker stack"
-	@docker compose -f docker-compose.yml stop
+	@docker-compose -f docker-compose.yml stop
 
 .PHONY: stack-rm
 stack-rm:  ## Local Stack: Remove Services and Volumes
 	@echo "Remove local Docker stack"
-	@docker compose -f docker-compose.yml down
+	@docker-compose -f docker-compose.yml down
 	@echo "Remove local volume data"
 	@docker volume rm $(PROJECT_NAME)_vol-site-data
 
