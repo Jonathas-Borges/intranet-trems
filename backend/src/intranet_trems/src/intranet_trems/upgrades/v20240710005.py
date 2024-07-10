@@ -12,8 +12,8 @@ def cria_estrutura(context):
         ],
     )
     logger.info("Criados conteúdos para organizar Áreas e Pessoas.")
-    
-    
+
+
 def alterar_permissionamento_colaboradores(context):
     portal = api.portal.get()
     colaboradores = portal["colaboradores"]
